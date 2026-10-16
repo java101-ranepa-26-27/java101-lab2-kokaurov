@@ -6,28 +6,36 @@ public class Student {
     public String name;
     public List<Integer> grades;
 
+    public Student(String name,List<Integer>grades ) {
+    this.name = name;
+    this.grades = grades;
+    }
+
     public double average(){
         double sum = 0;
         for (int i: grades) {
-            sum += grades.get(i);
+            sum += i;
         }
         return sum / grades.size();
     };
 
     public void printReport(){
-        System.out.println("Имя студента" + name);
+        System.out.println("Student's name " + name);
 
-        System.out.println("Оценки студента" + grades);
+        System.out.println("Student's grades " + grades);
 
         double av = average();
+
+        System.out.println("The student's average grade is " + av);
+
         if (av >= 4.5) {
-            System.out.println("Отлично");
+            System.out.println("excellent student");
         } else if (av >= 3.5) {
-            System.out.println("Хорошист");
+            System.out.println("good student");
         } else if (av >= 2.5) {
-            System.out.println("Троечник");
+            System.out.println("average student");
         } else {
-            System.out.println("Двоечник");
+            System.out.println("poor student");
         }
     };
 }
